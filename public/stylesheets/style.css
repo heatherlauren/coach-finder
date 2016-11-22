@@ -5816,7 +5816,17 @@ button.close {
 
 #map {
   height: 35em;
-  width: 50%;
-  margin: auto auto; }
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  border: solid 0.5em #DE4815; }
+  #map > div {
+    position: static !important; }
+
+ol {
+  list-style-position: inside;
+  line-height: 1.5; }
+
+body {
+  background-color: #FAFAFA; }
 
 /*# sourceMappingURL=style.css.map */
