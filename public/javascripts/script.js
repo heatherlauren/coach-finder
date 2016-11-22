@@ -1,8 +1,8 @@
 // Generate map and markers
-
 function initMap() {
   var map;
   var stationMarkers = [];
+  var centre;
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 51.525325, lng: -0.080969},
@@ -31,9 +31,24 @@ function initMap() {
     generateList(stations);
     highlightMarkers(stations, stationMarkers)
   });
+
+// Make map responsive
+
+  function calculateCentre() {
+    centre = map.getCenter();
+  }
+
+  google.maps.event.addDomListener(map, 'idle', function() {
+    calculateCentre();
+  });
+
+  google.maps.event.addDomListener(window, 'resize', function() {
+    map.setCenter(centre);
+  });
+
 }
 
-// Generate List
+// Generate list
 
 function generateList(stations) {
   $.each(stations, function (index, value) {
