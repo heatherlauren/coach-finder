@@ -55,7 +55,8 @@ function initMap() {
 
   var precedentMarker = new google.maps.Marker({
     position: {lat: 51.525325, lng: -0.080969},
-    map: map
+    map: map,
+    icon: "images/pin.png"
   });
 
   $.getJSON('//data.gov.uk/data/api/service/transport/naptan_coach_stations/postcode?postcode=EC2A 3LT&distance=3', function (data) {
@@ -96,7 +97,7 @@ function initMap() {
 
 function generateList(stations) {
   $.each(stations, function (index, value) {
-    $("#stationList").append(`<li class="stationList${index}"> <a href=""> ${value.name} </a> </li>`)
+    $("#stationList").append(`<h4> <li> <a href="" class="stationList${index}"> ${value.name} </a> </li> </h4>`)
   });
 }
 
