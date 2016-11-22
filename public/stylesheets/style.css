@@ -5814,4 +5814,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+#map {
+  height: 35em;
+  width: 50%;
+  margin: auto auto; }
+
 /*# sourceMappingURL=style.css.map */
